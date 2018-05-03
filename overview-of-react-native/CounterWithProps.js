@@ -4,16 +4,16 @@ import { View, Text, StyleSheet } from "react-native";
 class Counter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { counter: 0 };
+    this.state = { counter: this.props.initialValue };
     this.inc = this.inc.bind(this);
     this.dec = this.dec.bind(this);
   }
   inc() {
-    this.setState({ counter: this.state.counter + 1 });
+    this.setState({ counter: this.state.counter + this.props.incValue });
   }
 
   dec() {
-    this.setState({ counter: this.state.counter - 1 });
+    this.setState({ counter: this.state.counter - this.props.decValue  });
   }
   render() {
     return (
